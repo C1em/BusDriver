@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/transactionsHistoryItem"
+        android:title="transactions history"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/totalItem"
+        android:title="Total 0 €"
+        app:showAsAction="ifRoom"/>
+
+
+    <item android:id="@+id/payItem"
+        android:title="Pay"
+        app:showAsAction="ifRoom"/>
+</menu>
