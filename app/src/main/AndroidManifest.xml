@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BusDriver">
         <activity
+            android:name=".TicketPrice"
+            android:exported="false" />
+        <activity
             android:name=".TransactionsHistoryActivity"
             android:exported="false" />
         <activity

@@ -77,6 +77,10 @@ class MainActivity : AppCompatActivity() {
                 val transactionsHistoryActivity : Intent = Intent(this, TransactionsHistoryActivity::class.java)
                 startActivity(transactionsHistoryActivity)
             }
+            "ticketPrice" -> {
+                val ticketPriceActivity : Intent = Intent(this, TicketPrice::class.java)
+                startActivity(ticketPriceActivity)
+            }
         }
         return false
     }
