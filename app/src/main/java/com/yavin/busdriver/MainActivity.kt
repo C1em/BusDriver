@@ -11,6 +11,7 @@ import android.view.MenuItem
 import androidx.appcompat.widget.ActionMenuView
 
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.FragmentTransaction
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,23 +28,12 @@ class MainActivity : AppCompatActivity() {
         amvMenu.setOnMenuItemClickListener { menuItem -> onOptionsItemSelected(menuItem) }
         basket = Basket(amvMenu)
 
+        val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
+        ft.replace(R.id.fragment_container_view, MainFragment(basket))
+        ft.commit()
+
         setSupportActionBar(t)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-    }
-
-    fun addWeekTicket(v: View) {
-
-        basket.addItem(1200)
-    }
-
-    fun addDayTicket(v: View) {
-
-        basket.addItem(250)
-    }
-
-    fun addSingleJourneyTicket(v: View) {
-
-        basket.addItem(110)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -74,12 +64,16 @@ class MainActivity : AppCompatActivity() {
             }
             "payItem" -> startActivityForResult(basket.getPayIntent(), 0)
             "transactionsHistoryItem" -> {
-                val transactionsHistoryActivity : Intent = Intent(this, TransactionsHistoryActivity::class.java)
-                startActivity(transactionsHistoryActivity)
+                val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
+                ft.replace(R.id.fragment_container_view, TransactionsHistoryFragment())
+                ft.addToBackStack(null)
+                ft.commit()
             }
             "ticketPrice" -> {
-                val ticketPriceActivity : Intent = Intent(this, TicketPrice::class.java)
-                startActivity(ticketPriceActivity)
+                val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
+                ft.replace(R.id.fragment_container_view, TicketPriceFragment())
+                ft.addToBackStack(null)
+                ft.commit()
             }
         }
         return false

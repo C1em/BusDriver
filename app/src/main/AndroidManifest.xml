@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BusDriver">
         <activity
-            android:name=".TicketPrice"
+            android:name=".TicketPriceFragment"
             android:exported="false" />
         <activity
-            android:name=".TransactionsHistoryActivity"
+            android:name=".TransactionsHistoryFragment"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

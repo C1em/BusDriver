@@ -6,38 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button_ticket1"
-        android:layout_width="202dp"
-        android:layout_height="82dp"
-        android:text="Single journey\n1,10 €"
-        android:onClick="addSingleJourneyTicket"
-        app:layout_constraintBottom_toTopOf="@+id/button_ticket2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button_ticket2"
-        android:layout_width="202dp"
-        android:layout_height="82dp"
-        android:text="Day\n2,50 €"
-        android:onClick="addDayTicket"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/basket"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button_ticket3"
-        android:layout_width="202dp"
-        android:layout_height="82dp"
-        android:text="Week\n12 €"
-        android:onClick="addWeekTicket"
-        app:layout_constraintBottom_toTopOf="@+id/basket"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_ticket2" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/basket"
